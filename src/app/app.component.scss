@@ -1,4 +1,25 @@
 ul {
     text-align: center;
     list-style: none;
+    background-color: #DD0031;
+}
+
+ul li {
+    display: inline-block;
+    padding: 10px;
+    margin: 0 15px;
+}
+
+ul li a {
+    color: #FFF;
+    transition: letter-spacing .2s ease-in-out;
+}
+
+ul li a:hover {
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+ul li a:hover ul {
+    background-color: #C3002F;
 }
