@@ -13,16 +13,13 @@ export class ServerComponent {
 
   constructor() {
     this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
-  }
-
-  setServerId(): string {
     let i = 0;
     let serverId: string = '';
     while (i < this.numberOfChars) {
       serverId += this.characters[Math.floor(Math.random() * (this.characters.length - 0))];
       i++;
     }
-    return serverId;
+    this.serverId = serverId;
   }
 
   getColor() {
