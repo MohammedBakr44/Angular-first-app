@@ -2,6 +2,7 @@ ul {
     text-align: center;
     list-style: none;
     background-color: #DD0031;
+    transition: all .2s ease-in-out;
 }
 
 ul li {
@@ -20,6 +21,6 @@ ul li a:hover {
     letter-spacing: 2px;
 }
 
-ul li a:hover ul {
+ul:hover {
     background-color: #C3002F;
 }
