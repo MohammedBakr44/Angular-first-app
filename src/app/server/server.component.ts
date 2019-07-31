@@ -6,14 +6,26 @@ import { Component } from '@angular/core';
 })
 
 export class ServerComponent {
-  serverId: number = 10;
+  serverId: string = '';
+  numberOfChars: number = 6;
+  characters: string[] = ['a', 'b', 'c', 'A', 'B', 'C', '@', '!', '$', '1', '2', '3', '4'];
   serverStatus: string = 'offline';
 
-  setServerStatus(st: string): string {
-    return st;
+  constructor() {
+    this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
   }
 
-  setServerId(id: string): string {
-    return id;
+  setServerId(): string {
+    let i = 0;
+    let serverId: string = '';
+    while (i < this.numberOfChars) {
+      serverId += this.characters[Math.floor(Math.random() * (this.characters.length - 0))];
+      i++;
+    }
+    return serverId;
+  }
+
+  getColor() {
+    return this.serverStatus === 'online' ? 'green' : 'red';
   }
 }

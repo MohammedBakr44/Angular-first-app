@@ -1,9 +1,11 @@
-<h3>Server with ID 
+<h3 >Server with ID 
     <span style="font-weight: bold;" class="text-primary">
-        {{ setServerId('gqUYlM9n97LcWpEv') }}
+        {{ setServerId() }}
     </span>
         is
-     <span class="text-success" style="font-weight: bolder;">
-         {{ setServerStatus('online') }}
+     <span [ngClass]="{'text-success': getColor() == 'green',
+                        'text-danger': getColor() == 'red'}"
+        style="font-weight: bolder;">
+         {{ serverStatus }}
     </span>
 </h3>
