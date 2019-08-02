@@ -7,9 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Kato';
-	
-	sayHello() {
-		alert('Hi ' + this.title);
-	}
-
 }
