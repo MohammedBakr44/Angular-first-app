@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway&display=swap');
+
+body {
+    height: 100000px;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    margin: 20px 10px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    width: 100px;
+    letter-spacing: 1.5px;
+}
+
+.sperate {
+    display: block;
+    width: 90vw;
+    height: 2px;
+    background-color: #000;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin: 50px;
+}
+
+p {
+    display: block;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    line-height: 1.8em;
+    letter-spacing: 1.5px;
+    text-align: left;
+    margin-left: 20px;
+    color: #8F8F8F;
+    font-size: 14px;
+}
+
+textarea {
+    height: 50vh;
+    background-color: transparent;
+    font-family: sans-serif;
+    line-height: 1.5em;
+    letter-spacing: 1.5px;
+    width: 100vw;
+    border-radius: 5px;
+}
