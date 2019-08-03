@@ -1,27 +1,45 @@
 <div class="container">
-    <button (click)="setContent(blogContent)" class="btn btn-dark">Edit</button>
-    <button (click)="setContent(blogContent)" class="btn btn-success">Save</button>
+    <button (click)="Edit()" *ngIf="!edit" class="btn btn-dark">Edit</button>
+    <button (click)="Save()" *ngIf="edit" class="btn btn-success">Save</button>
     <div class="sperate"></div>
     <div class="img">
-        <img src="../../assets/bg.png" class="img-fluid" [alt]="altText">
-        <div class="input-group">
-            <input type="text"  placeholder="Enter image's URL" name="" id="">
-            <div class="custom-file">
-                <input type="file" class="custom-file-input" id="customFile">
-                <label class="custom-file-label" for="customFile">Choose file</label>
-            </div>
-            <input type="text" class="form-control" placeholder="Enter image's alt text" name="" id="">
+        <img [src]="img" *ngIf="!edit" class="img-fluid" [alt]="altText">
+        <div class="input-group" *ngIf="edit">
+            <div class="row">
+            <input 
+            type="text" 
+            class="form-control col-5" 
+            (input)="setImg($event)" 
+            placeholder="Enter image's URL">
+            <input type="text" 
+            (input)="setAlt($event)" 
+            class="form-control col-6" 
+            placeholder="Enter image's alt text">
+        </div>
+        </div>
+    </div>
+    <div class="title">
+        <h1 *ngIf="!edit"> {{ oTitle }} </h1>
+        <h4 *ngIf="!edit">By: {{ author }}</h4>
+        <div class="input-group" *ngIf="edit">
+            <div class="row">
+            <input 
+            type="text" 
+            class="form-control col-8" 
+            (input)="setTitle($event)"
+            [value]="title"  
+            placeholder="Enter blog's title and author's name seperated by comma(,)" />
         </div>
     </div>
     <div class="content">
         <p *ngIf="!edit" [innerHTML]="content" 
         #blogContent></p>
         <div class="input-group">
-            <textarea 
+            <textarea
             class="form-control" 
             [innerText]="content" 
-            *ngIf="edit" 
-            (input)="changeValue($event)"></textarea>
+            *ngIf="edit"
+            (input)="setContent($event)"></textarea>
         </div>
     </div>
 </div>

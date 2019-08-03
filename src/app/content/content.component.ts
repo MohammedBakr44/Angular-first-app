@@ -1,4 +1,5 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-content',
@@ -9,11 +10,16 @@ export class ContentComponent implements OnInit {
 
   edit: boolean = false;
 
-  head: string = 'Can Robert Downey Jr. Save Woodworking?';
+  title: string = 'Can Robert Downey Jr. Save Woodworking?, John Doe';
+
+  oTitle: string = this.title.substr(0, this.title.indexOf(','));
+  author: string = this.title.split(',')[1];
 
   img: string = '../../assets/bg.png';
 
-  altText: string = 'astronaut';
+  imgFile: File;
+
+  altText: string = '';
 
   // tslint:disable: max-line-length
   content: string = `We gonna chung fo shizzle mah nizzle fo rizzle, mah home g-dizzle my shizz hizzle amizzle, for sure adipiscing i'm in the shizzle. Cool sapien velizzle, pot da bomb, fizzle quis, my shizz vizzle, doggy. Pellentesque sheezy mofo. Sizzle erizzle. Fo shizzle mah nizzle fo rizzle, mah home g-dizzle izzle dolor ma nizzle turpizzle tempizzle dope. Maurizzle pellentesque nibh bow wow wow turpizzle. Shizzle my nizzle crocodizzle izzle tortizzle. Pellentesque crazy rhoncizzle pot. My shizz hac habitasse platea dictumst. Fizzle sure. Curabitur dope urna, pretium fizzle, mattizzle bling bling, fizzle vitae, nunc. Gangster suscipizzle. Integer semper velit sizzle shizznit.
@@ -31,16 +37,30 @@ export class ContentComponent implements OnInit {
 
   constructor() { }
 
-  setContent(el: ElementRef) {
-    console.log(this.edit);
-    console.log(el);
+  Edit() {
     this.edit = !this.edit;
-    console.log(this.edit);
   }
 
-  changeValue(el: Event) {
-    console.log(el);
+  Save() {
+    this.edit = !this.edit;
+  }
+
+  setContent(el: Event) {
     this.content = (el.target as HTMLInputElement).value;
+  }
+
+  setImg(el: Event) {
+    this.img = (el.target as HTMLInputElement).value;
+  }
+
+  setAlt(el: Event) {
+    this.altText = (el.target as HTMLInputElement).value;
+  }
+
+  setTitle(el: Event) {
+    this.title = (el.target as HTMLInputElement).value;
+    this.oTitle = this.title.substr(0, this.title.indexOf(','));
+    this.author = this.title.split(',')[1];
   }
 
   ngOnInit() {

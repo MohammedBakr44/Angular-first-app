@@ -1,51 +1,85 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway&display=swap');
 
-body {
-    height: 100000px;
-    text-align: center;
-}
-
 .btn {
-    display: inline-block;
-    margin: 20px 10px;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 18px;
-    width: 100px;
-    letter-spacing: 1.5px;
+  display: inline-block;
+  margin: 20px 10px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  width: 100px;
+  letter-spacing: 1.5px;
 }
 
 .sperate {
-    display: block;
-    width: 90vw;
-    height: 2px;
-    background-color: #000;
-    margin-bottom: 20px;
+  display: block;
+  width: 80vw;
+  height: 2px;
+  background-color: #000;
+  margin-bottom: 20px;
+  margin-left: 20px;
 }
 
-.input-group {
-    margin: 50px;
+.img {
+  img {
+    display: inline-block;
+    margin-bottom: 50px;
+  }
+  .input-group {
+    margin: 30px;
+    display: inline-block !important;
+
+    .row {
+      & > * {
+        width: 50%;
+        display: inline-block;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+.title {
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    margin: 20px;
+  }
+  h4 {
+    text-align: left;
+    margin-left: 40px;
+    margin-bottom: 40px;
+  }
+  .input-group {
+    margin: 30px;
+    display: inline-block !important;
+    .row {
+      input {
+        display: inline-block;
+        margin-right: 5px;
+      }
+    }
+  }
 }
 
 p {
-    display: block;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 300;
-    line-height: 1.8em;
-    letter-spacing: 1.5px;
-    text-align: left;
-    margin-left: 20px;
-    color: #8F8F8F;
-    font-size: 14px;
+  display: block;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  line-height: 1.8em;
+  letter-spacing: 1.5px;
+  text-align: left;
+  margin-left: 20px;
+  color: #8F8F8F;
+  font-size: 14px;
 }
 
 textarea {
-    height: 50vh;
-    background-color: transparent;
-    font-family: sans-serif;
-    line-height: 1.5em;
-    letter-spacing: 1.5px;
-    width: 100vw;
-    border-radius: 5px;
+  height: 50vh;
+  background-color: transparent;
+  font-family: sans-serif;
+  line-height: 1.5em;
+  letter-spacing: 1.5px;
+  width: 80vw !important;
+  border-radius: 5px;
 }

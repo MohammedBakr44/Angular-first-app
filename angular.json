@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/animate.css/source/animate.min.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
